@@ -1,0 +1,18 @@
+version: "3.8"
+
+services: 
+  postgres:
+    image: postgres:latest
+    container_name: discord-api-clone-pg
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    ports:
+      - 5432:5432
+    restart: always
+  redis: 
+    image: redis:latest
+    container_name: discord-api-clone-redis
+    ports:
+      - 6379:6379
