@@ -44,6 +44,7 @@ export class RequestResetEmailUseCase {
     await this.emailProvider.sendMail(data);
 
     return Result.ok<any>({
+      
       message: 'Token send to email successfully',
     });
   }

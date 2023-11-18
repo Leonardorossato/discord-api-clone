@@ -2,6 +2,72 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type Channel {
+  createdAt: String
+  id: Float!
+  name: String
+  type: ChannelType!
+  updatedAt: String
+}
+
+"""Defines the type of channel"""
+enum ChannelType {
+  AUDIO
+  TEXT
+  VIDEO
+}
+
+input LoginUserDto {
+  email: String!
+  password: String!
+}
+
+type Mutation {
+  login(input: LoginUserDto!): Profile!
+  register(input: RegisterDto!): Profile!
+  requestResetEmail(data: RequestResetEmailDto!): Profile!
+  resetPassword(data: RequestResetPasswordDto!, token: String!): Profile!
+}
+
+type Profile {
+  channels: [Channel]
+
+  """Email do usuário"""
+  email: String!
+  id: Float!
+  imageUrl: String!
+  name: String!
+  password: String!
+  servers: [Server]
+  token: String
+}
+
 type Query {
   helloGraphQL: String!
+}
+
+input RegisterDto {
+  email: String!
+  imageUrl: String!
+  name: String!
+  password: String!
+}
+
+input RequestResetEmailDto {
+  """Email do usuário"""
+  email: String!
+}
+
+input RequestResetPasswordDto {
+  newPassword: String!
+}
+
+type Server {
+  channels: [Channel!]!
+  id: Float!
+  imageUrl: String!
+  inviteCode: String
+  name: String!
+  profile: Profile
+  profileId: Float!
 }

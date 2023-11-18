@@ -14,6 +14,10 @@ import { RequestResetPasswordController } from './usecases/commands/reset-passwo
 import { RequestResetPasswordUseCase } from './usecases/commands/reset-password/request-reset-password/request-reset-password.usecase';
 import { UpdateUserController } from './usecases/commands/update-user/update-user.controller';
 import { UpdateUserUseCase } from './usecases/commands/update-user/update-user.usecase';
+import { LoginUserResolver } from './usecases/commands/login-user/login-user.resolver';
+import { RegisterUserResolver } from './usecases/commands/register-user/register-user.resolver';
+import { RequestResetEmailResolver } from './usecases/commands/reset-password/request-reset-email/request-reset-email.resolver';
+import { RequestResetPasswordResolver } from './usecases/commands/reset-password/request-reset-password/request-reset-password.resolver';
 
 @Module({
   controllers: [
@@ -26,10 +30,14 @@ import { UpdateUserUseCase } from './usecases/commands/update-user/update-user.u
   ],
   providers: [
     LoginUserUseCase,
+    LoginUserResolver,
     RegisterUserUseCase,
+    RegisterUserResolver,
     ChangeUserPassowrdUseCase,
     RequestResetEmailUseCase,
+    RequestResetEmailResolver,
     RequestResetPasswordUseCase,
+    RequestResetPasswordResolver,
     UpdateUserUseCase,
     {
       provide: 'profile_repository',
