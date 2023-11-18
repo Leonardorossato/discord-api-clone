@@ -11,10 +11,10 @@ declare global {
       POSTGRES_USER: string;
       POSTGRES_PORT: number;
       POSTGRES_PASSWORD: string;
-      // NODEMAILER_HOST: string;
-      // NODEMAILER_PORT: number;
-      // NODEMAILER_USER: string;
-      // NODEMAILER_PASSWORD: string;
+      NODEMAILER_HOST: string;
+      NODEMAILER_PORT: number;
+      NODEMAILER_USER: string;
+      NODEMAILER_PASSWORD: string;
     }
   }
 }

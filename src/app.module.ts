@@ -3,13 +3,14 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { GraphQLModule } from '@nestjs/graphql';
 import { join } from 'path';
+import { ProfileModule } from './profile/profile.module';
 import { ServerModule } from './server/server.module';
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
     GraphQLModule.forRootAsync({
-      imports: [],
       inject: [],
+      imports: [],
       driver: ApolloDriver,
       useFactory: async () => ({
         playground: true,
@@ -19,6 +20,7 @@ import { ServerModule } from './server/server.module';
       }),
     }),
     ServerModule,
+    ProfileModule,
   ],
 })
 export class AppModule {}
