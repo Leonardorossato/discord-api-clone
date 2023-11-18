@@ -19,7 +19,9 @@ export class RegisterUserUseCase {
     const userExists = await this.userRepository.findByEmail(data.email);
 
     if (!userExists) {
-      return Result.fail(new ForbiddenException('User existent'));
+      return Result.fail(
+        new ForbiddenException('User with this email already exists'),
+      );
     }
 
     const passwordHash = bcrypt.hashSync(data.password, 10);

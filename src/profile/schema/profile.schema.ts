@@ -6,10 +6,13 @@ export class Profile {
   @Field()
   id: number;
 
-  @Field({ nullable: true })
+  @Field({ name: 'email', description: 'Email do usuário' })
   email: string;
 
-  @Field({ nullable: true })
+  @Field()
+  password: string;
+
+  @Field()
   name: string;
 
   @Field(() => [Server], { nullable: 'itemsAndList' })
@@ -20,4 +23,7 @@ export class Profile {
 
   @Field(() => [Channel], { nullable: 'itemsAndList' })
   channels: Channel[];
+
+  @Field({ nullable: true })
+  token?: string;
 }

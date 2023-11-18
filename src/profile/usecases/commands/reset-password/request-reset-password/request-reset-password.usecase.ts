@@ -35,6 +35,7 @@ export class RequestResetPasswordUseCase {
       await this.userRepository.update(user.id, user);
 
       return Result.ok<any>({
+        token: user.token,
         message: 'Password changed successfully',
       });
     } catch (error) {

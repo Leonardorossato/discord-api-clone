@@ -33,6 +33,7 @@ export interface ProfileProps {
   email: string;
   password: string;
   imageUrl: string;
+  token?: string;
   createdAt?: Date;
   updatedAt?: Date;
 }
