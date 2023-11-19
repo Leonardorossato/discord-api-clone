@@ -29,9 +29,9 @@ async function bootstrap() {
     console.log(
       `Server running on port: http://localhost:${process.env.APP_PORT}/docs`,
     );
-    console.log(
-      `Server running on port: http://localhost:${process.env.APP_PORT}/graphql`,
-    );
+    // console.log(
+    //   `Server running on port: http://localhost:${process.env.APP_PORT}/graphql`,
+    // );
   });
 }
 bootstrap();
