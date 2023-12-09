@@ -18,10 +18,14 @@ import { LoginUserResolver } from './usecases/commands/login-user/login-user.res
 import { RegisterUserResolver } from './usecases/commands/register-user/register-user.resolver';
 import { RequestResetEmailResolver } from './usecases/commands/reset-password/request-reset-email/request-reset-email.resolver';
 import { RequestResetPasswordResolver } from './usecases/commands/reset-password/request-reset-password/request-reset-password.resolver';
+import { FindProfileByIdController } from './usecases/queries/find-profile-by-id/find-profile-by-id.controller';
+import { FindProfileByIdUseCase } from './usecases/queries/find-profile-by-id/find-profile-by-id.usecase';
+import { FindProfileByIdResolver } from './usecases/queries/find-profile-by-id/find-profile-by-id.resolver';
 
 @Module({
   controllers: [
     LoginUserController,
+    FindProfileByIdController,
     RegisterUserController,
     ChangeUserPassowrdController,
     RequestResetEmailController,
@@ -39,6 +43,8 @@ import { RequestResetPasswordResolver } from './usecases/commands/reset-password
     RequestResetPasswordUseCase,
     RequestResetPasswordResolver,
     UpdateUserUseCase,
+    FindProfileByIdUseCase,
+    FindProfileByIdResolver,
     {
       provide: 'profile_repository',
       useClass: UserRepository,
