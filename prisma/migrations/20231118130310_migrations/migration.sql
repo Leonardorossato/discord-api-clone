@@ -22,6 +22,7 @@ CREATE TABLE "Server" (
     "id" SERIAL NOT NULL,
     "name" TEXT NOT NULL,
     "imageUrl" TEXT NOT NULL,
+    "description" TEXT NOT NULL,
     "inviteCode" TEXT NOT NULL,
     "profileId" INTEGER NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
