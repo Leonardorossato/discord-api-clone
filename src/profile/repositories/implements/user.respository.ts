@@ -37,6 +37,11 @@ export class UserRepository implements UserRepositoryInterface {
   async findById(id: number): Promise<Result<UserInterface>> {
     const user = await this.profileRepository.findUnique({
       where: { id: id },
+      include: {
+        servers: {
+          include: { channels: true },
+        },
+      },
     });
     return Result.ok(ProfileMapper.toDomain(user).getPropsCopy());
   }

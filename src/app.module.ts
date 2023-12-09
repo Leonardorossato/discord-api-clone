@@ -5,6 +5,7 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { join } from 'path';
 import { ProfileModule } from './profile/profile.module';
 import { ServerModule } from './server/server.module';
+import { MemberModule } from './member/member.module';
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
@@ -21,6 +22,7 @@ import { ServerModule } from './server/server.module';
     }),
     ServerModule,
     ProfileModule,
+    MemberModule,
   ],
 })
 export class AppModule {}

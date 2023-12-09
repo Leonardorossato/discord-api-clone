@@ -43,6 +43,7 @@ type Profile {
 }
 
 type Query {
+  findProfileById(id: Float!): Profile!
   helloGraphQL: String!
 }
 

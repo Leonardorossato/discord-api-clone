@@ -7,9 +7,7 @@ declare global {
     interface ProcessEnv {
       APP_PORT: number;
       JWT_SECRET: string;
-      POSTGRES_HOST: string;
-      POSTGRES_USER: string;
-      POSTGRES_PORT: number;
+      DATABASE_URL: string;
       POSTGRES_PASSWORD: string;
       NODEMAILER_HOST: string;
       NODEMAILER_PORT: number;
